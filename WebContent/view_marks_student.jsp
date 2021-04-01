@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
   <link rel="icon" href="whin.png" type="image/icon type">
-  <title>Student Info. | OnCl - Edu. Cloud</title>
+  <title>View Marks | OnCl - Edu. Cloud</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
@@ -37,8 +37,33 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- MDBootstrap Datatables  -->
   <link href="css/addons/datatables.min.css" rel="stylesheet">
-  
+
   <style>
+      * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Float four columns side by side */
+        .column {
+            float:inherit;
+            width: 25%;
+            padding: 0 10px;
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .row {margin: 0 -5px;}
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
         /* Responsive columns */
         @media screen and (max-width: 600px) {
         .column {
@@ -182,32 +207,26 @@
             background-color: #ffffff!important;
         }
 
+        table,th-sm {
+            font-weight: bolder;
+        }
   </style>
 </head>
 <body>
-	<%@include file="navbar_admin.jsp" %>
-	
+
+    <%@include file="navbar_student.jsp" %>
+
   <div style="padding: 10px;">
-    <a class="btn btn-bd-download" href="add_student.jsp" role="button"><i class="fas fa-user-plus"></i> <b>Add Student</b></a>
     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <thead>
         <tr>
             <th class="th-sm"> <b> Registration ID </b>
     
             </th>
-            <th class="th-sm"> <b> First Name </b>
-    
-            </th>
-            <th class="th-sm"> <b> Last Name </b>
-    
-            </th>
-            <th class="th-sm"> <b> Gender </b>
+            <th class="th-sm"> <b> Full Name </b>
     
             </th>
             <th class="th-sm"> <b> E - Mail </b>
-    
-            </th>
-            <th class="th-sm"> <b> Branch </b>
     
             </th>
             <th class="th-sm"> <b> Enterprise Programming </b>
@@ -224,10 +243,11 @@
             </th>
             <th class="th-sm"> <b> Computer Networks and Security </b>
     
-            </th>                                                            
+            </th>
         </tr>
         </thead>
         <tbody>
+        
         <%
         int ep=0,ds=0,cns=0,mp=0,ts=0;        
         try{
@@ -236,7 +256,8 @@
             System.out.println("Driver Class Loaded");
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "root");
             System.out.println("Connection Established");
-            PreparedStatement stmt=con.prepareStatement("select * from student");
+            PreparedStatement stmt=con.prepareStatement("select * from student where email=?");
+            stmt.setString(1, email);
             ResultSet rs=stmt.executeQuery();
             PreparedStatement stmt1=con.prepareStatement("select score from exam_student where coursename=? and email=?");
             while(rs.next()){
@@ -296,11 +317,8 @@
             	%>
             	<tr>
             	<td><%=rs.getString(2) %></td>
-            	<td><%=rs.getString(3) %></td>
-            	<td><%=rs.getString(4) %></td>
-            	<td><%=rs.getString(5) %></td>
+            	<td><%=studentname %></td>
             	<td><%=rs.getString(1) %></td>
-            	<td><%=rs.getString(7) %></td>
             	<td><%=ep %></td>
             	<td><%=mp %></td>
             	<td><%=ds %></td>
@@ -314,21 +332,15 @@
         	out.println(e);
         }
         %>
-       
-        </tbody>
+        
+        </tbody>      
         <tfoot>
         <tr>
             <th> <b> Registration ID </b>
             </th>
-            <th> <b> First Name </b>
-            </th>
-            <th> <b> Last Name </b>
-            </th>
-            <th> <b> Gender </b>
+            <th> <b> Full Name </b>
             </th>
             <th> <b> E - Mail </b>
-            </th>
-            <th> <b> Branch </b>
             </th>
             <th> <b> Enterprise Programming </b>
             </th>
@@ -339,71 +351,74 @@
             <th> <b> Technical Skills </b>
             </th>
             <th> <b> Computer Networks and Security </b>    
-            </th>                                                            
+            </th>
         </tr>
         </tfoot>
     </table>
   </div>
 
-  <div class="footer-dark">
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3 item">
-                    <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Explore </h3>
-                    <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="fullcalendar.html">Academic Calendar</a></li>
-                        <li><a href="#">Our Faculty - Our Strength</a></li>
-                        <li><a href="#">Programs Offered</a></li>
-                        <li><a href="#">Photo Gallery</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-3 item">
-                    <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Faculty </h3>
-                    <ul>
-                        <li><a href="login.html">Login OnCl</a></li>
-                        <li><a href="current_openings.html">Current Openings</a></li>
-                        <li><a href="#">Exam Section</a></li>
-                        <li><a href="https://mail.office365.com/" target="_blank">Mail Login</a></li>
-                        <li><a href="staff_grievance.html">Staff Grievance</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-3 item">
-                    <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Student </h3>
-                    <ul>
-                        <li><a href="login.html">Login OnCl</a></li>
-                        <li><a href="#">Student Magazines</a></li>
-                        <li><a href="https://mail.office365.com/" target="_blank">Mail Login</a></li>
-                        <li><a href="admissions.html">Admissions</a></li>
-                        <li><a href="student_grievance.html">Student Grievance</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-3 item">
-                    <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Institute </h3>
-                    <ul>
-                        <li><a href="institute.html">Our Mission</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="https://goo.gl/maps/WiBhwHTGJseb1o7q9" target="_blank">Visit & Maps</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                    <div class="col-md-12 item text" id="footer__">
-                        <img src="whin.png" style="width:30px; height: 30px; margin-right: 2px;">
-                        <span class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> OnCl - Edu. Cloud </span>
-                        <p>The OnCl - Edu. Cloud is an web application which works on providing the solutions in Education field to help the people. <br> The WhiN is parent organization (founded in 2020) of OnCl - Edu. Cloud.</p>
+      <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Explore </h3>
+                        <ul>
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="fullcalendar.html">Academic Calendar</a></li>
+                            <li><a href="#">Our Faculty - Our Strength</a></li>
+                            <li><a href="#">Programs Offered</a></li>
+                            <li><a href="#">Photo Gallery</a></li>
+                        </ul>
                     </div>
-                    <div class="col-md-12 item social">
-                        <a href="https://github.com/4akhilkumar" target="_blank"><i class="icon ion-social-github"></i></a>
-                        <a href="https://t.me/#" target="_blank"><i class="fa fa-telegram"></i></a>
-                        <a href="mailto:4akhilkumar@gmail.com" target="_blank"><i class="icon ion-email"></i></a>
-                        <a href="https://linkedin.com/#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Faculty </h3>
+                        <ul>
+                            <li><a href="login.html">Login OnCl</a></li>
+                            <li><a href="current_openings.html">Current Openings</a></li>
+                            <li><a href="#">Exam Section</a></li>
+                            <li><a href="https://mail.office365.com/" target="_blank">Mail Login</a></li>
+                            <li><a href="staff_grievance.html">Staff Grievance</a></li>
+                        </ul>
                     </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Student </h3>
+                        <ul>
+                            <li><a href="login.html">Login OnCl</a></li>
+                            <li><a href="#">Student Magazines</a></li>
+                            <li><a href="https://mail.office365.com/" target="_blank">Mail Login</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="student_grievance.html">Student Grievance</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Institute </h3>
+                        <ul>
+                            <li><a href="institute.html">Our Mission</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="https://goo.gl/maps/WiBhwHTGJseb1o7q9" target="_blank">Visit & Maps</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="footer__"> -->
+                        <div class="col-md-12 item text" id="footer__">
+                            <img src="whin.png" style="width:30px; height: 30px; margin-right: 2px;">
+                            <span class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> OnCl - Edu. Cloud </span>
+                            <p>The OnCl - Edu. Cloud is an web application which works on providing the solutions in Education field to help the people. <br> The WhiN is parent organization (founded in 2020) of OnCl - Edu. Cloud.</p>
+                        </div>
+                        <div class="col-md-12 item social">
+                            <a href="https://github.com/4akhilkumar" target="_blank"><i class="icon ion-social-github"></i></a>
+                            <a href="https://t.me/#" target="_blank"><i class="fa fa-telegram"></i></a>
+                            <a href="mailto:4akhilkumar@gmail.com" target="_blank"><i class="icon ion-email"></i></a>
+                            <a href="https://linkedin.com/#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    <!-- </div> -->
+                </div>
             </div>
-        </div>
-    </footer>
-</div>
+        </footer>
+    </div>
 
   <!-- jQuery -->
   <script type="text/javascript" src="js/jquery.min.js"></script>

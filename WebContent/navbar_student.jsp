@@ -268,7 +268,7 @@ catch(Exception e){
 			  </div>
 		      <ul class="User-Dropdown">
                  <li><span> <i class="fas fa-user-graduate"></i> </span> <a href="student_dashboard.jsp">Dashboard</a></li>
-		         <li><span> <i class="fas fa-user-circle"></i> </span> <a href="#">My Profile</a></li>
+		         <li><span> <i class="fas fa-poll-h"></i> </span> <a href="view_marks_student.jsp">My Marks</a></li>
 		         <li><span> <i class="fas fa-sign-out-alt"></i> </span> <a href="logout.jsp">Logout</a></li>
 		      </ul>
 			</div>
