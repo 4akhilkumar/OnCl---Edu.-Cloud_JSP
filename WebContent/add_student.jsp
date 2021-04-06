@@ -221,56 +221,53 @@
                         <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Explore </h3>
                         <ul>
                             <li><a href="home.html">Home</a></li>
-                            <li><a href="fullcalendar.html">Academic Calendar</a></li>
-                            <li><a href="#">Our Faculty - Our Strength</a></li>
-                            <li><a href="#">Programs Offered</a></li>
-                            <li><a href="#">Photo Gallery</a></li>
+                            <li><a href="https://www.kluniversity.in/site/acadcal.htm" target="_blank">Academic Calendar</a></li>
+                            <li><a href="https://www.kluniversity.in/flist.aspx" target="_blank">Our Faculty - Our Strength</a></li>
+                            <li><a href="https://www.kluniversity.in/programmes.aspx" target="_blank">Programs Offered</a></li>
+                            <li><a href="https://www.kluniversity.in/PGalleries.aspx" target="_blank">Photo Gallery</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3 item">
                         <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Faculty </h3>
                         <ul>
-                            <li><a href="login.html">Login OnCl</a></li>
-                            <li><a href="current_openings.html">Current Openings</a></li>
-                            <li><a href="#">Exam Section</a></li>
+                            <li><a href="login.jsp">Login OnCl</a></li>
+                            <li><a href="https://careers.kluniversity.in/" target="_blank">Current Openings</a></li>
+                            <li><a href="https://www.kluniversity.in/es.aspx?id=0" target="_blank">Exam Section</a></li>
                             <li><a href="https://mail.office365.com/" target="_blank">Mail Login</a></li>
-                            <li><a href="staff_grievance.html">Staff Grievance</a></li>
+                            <li><a href="https://www.kluniversity.in/Staff-Grievances.aspx" target="_blank">Staff Grievance</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3 item">
                         <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Student </h3>
                         <ul>
-                            <li><a href="login.html">Login OnCl</a></li>
-                            <li><a href="#">Student Magazines</a></li>
+                            <li><a href="login.jsp">Login OnCl</a></li>
+                            <li><a href="https://www.kluniversity.in/Student-Magazine.aspx" target="_blank">Student Magazines</a></li>
                             <li><a href="https://mail.office365.com/" target="_blank">Mail Login</a></li>
-                            <li><a href="admissions.html">Admissions</a></li>
-                            <li><a href="student_grievance.html">Student Grievance</a></li>
+                            <li><a href="https://www.kluniversity.in/admissions.aspx" target="_blank">Admissions</a></li>
+                            <li><a href="https://www.kluniversity.in/stugri.aspx" target="_blank">Student Grievance</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3 item">
                         <h3 class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> Institute </h3>
                         <ul>
-                            <li><a href="institute.html">Our Mission</a></li>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="https://www.kluniversity.in/Mission.aspx" target="_blank">Our Mission</a></li>
+                            <li><a href="https://www.kluniversity.in/Mission.aspx" target="_blank">About Us</a></li>
                             <li><a href="https://goo.gl/maps/WiBhwHTGJseb1o7q9" target="_blank">Visit & Maps</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="https://www.kluniversity.in/contact.aspx" target="_blank">Contact Us</a></li>
+                            <li><a href="https://www.kluniversity.in/privacy.aspx" target="_blank">Privacy Policy</a></li>
                         </ul>
                     </div>
-
-                    <!-- <div class="footer__"> -->
-                        <div class="col-md-12 item text" id="footer__">
-                            <img src="whin.png" style="width:30px; height: 30px; margin-right: 2px;">
-                            <span class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> OnCl - Edu. Cloud </span>
-                            <p>The OnCl - Edu. Cloud is an web application which works on providing the solutions in Education field to help the people. <br> The WhiN is parent organization (founded in 2020) of OnCl - Edu. Cloud.</p>
-                        </div>
-                        <div class="col-md-12 item social">
-                            <a href="https://github.com/4akhilkumar" target="_blank"><i class="icon ion-social-github"></i></a>
-                            <a href="https://t.me/#" target="_blank"><i class="fa fa-telegram"></i></a>
-                            <a href="mailto:4akhilkumar@gmail.com" target="_blank"><i class="icon ion-email"></i></a>
-                            <a href="https://linkedin.com/#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    <!-- </div> -->
+                      <div class="col-md-12 item text" id="footer__">
+                          <img src="whin.png" style="width:30px; height: 30px; margin-right: 2px;">
+                          <span class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> OnCl - Edu. Cloud </span>
+                          <p>The OnCl - Edu. Cloud is an web application which works on providing the solutions in Education field to help the people. <br> The WhiN is parent organization (founded in 2020) of OnCl - Edu. Cloud.</p>
+                      </div>
+                      <div class="col-md-12 item social">
+                          <a href="https://github.com/4akhilkumar" target="_blank"><i class="icon ion-social-github"></i></a>
+                          <a href="https://t.me/activare" target="_blank"><i class="fa fa-telegram"></i></a>
+                          <a href="mailto:4akhilkumar@gmail.com" target="_blank"><i class="icon ion-email"></i></a>
+                          <a href="https://www.linkedin.com/in/n-v-n-s-pavan-radha-krishna-kumar-9184641b0/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                      </div>
                 </div>
             </div>
         </footer>
